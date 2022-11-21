@@ -21,7 +21,6 @@ export const MainContent = ({
           <Outlet />
         </Suspense>
       </div>
-      {/* <RightSidebar /> */}
     </div>
   );
 };
