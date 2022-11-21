@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type='range'] {
+    @apply appearance-none  h-2 bg-base-100 rounded-md pointer-events-none;
+  }
+
+  /* Input Thumb */
+  input[type='range']::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 rounded-full bg-primary cursor-ew-resize transition-all pointer-events-auto z-10 relative;
+  }
+
+  input[type='range']::-webkit-slider-thumb:hover {
+    @apply bg-primary;
+  }
+  /* Input Track */
+  input[type='range']::-webkit-slider-runnable-track {
+    @apply appearance-none shadow-none border-none bg-transparent;
+  }
+
+  .media-detail-trailers .swiper-slide {
+    transition: all 1s;
+  }
+  .media-detail-trailers .swiper-slide.swiper-slide-active {
+    scale: 1;
+  }
+  .media-detail-trailers .swiper-slide:not(.swiper-slide-active) {
+    scale: 0.85;
+  }
+  .media-detail-trailers .swiper-button-prev,
+  .media-detail-trailers .swiper-button-next {
+    display: none;
+  }
+  .product-card.after\:from-white\/0::after {
+    --tw-gradient-from: #fff0 40%;
+  }
+  .product-card .LazyLoad {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  .product-card .LazyLoad.is-visible {
+    opacity: 1;
+  }
+
+  .form-group {
+    @apply relative;
+  }
+  .form-group .error {
+    @apply text-red-400 absolute left-0 -bottom-7;
+  }
+}
+
+.app-date-select .react-datepicker-wrapper {
+  @apply w-max;
+}
+.app-date-select .react-datepicker__input-container > input {
+  @apply w-44 p-2 rounded-md bg-base-100;
+}
+
+.app-date-select .react-datepicker__header {
+  @apply bg-base-100 dark:bg-base-content;
+}
+.app-date-select .react-datepicker__navigation-icon::before {
+  @apply top-3 border-base-300;
+}
+.app-date-select .react-datepicker {
+  @apply bg-base-100;
+}
+.app-date-select .react-datepicker__day {
+  @apply text-base-content;
+}
+.app-date-select .react-datepicker__day:hover {
+  @apply bg-base-300;
+}
+.app-date-select .react-datepicker__day--keyboard-selected,
+.app-date-select .react-datepicker__day--selected {
+  @apply bg-primary;
+}
+
+.app-date-select
+  .react-datepicker-popper[data-placement^='bottom']
+  .react-datepicker__triangle::after {
+  @apply border-b-base-100 dark:border-b-base-content;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #e0a82e;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+}
+
+.dark#nprogress .bar {
+  background: #6419e6;
+}
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #e0a82e;
+  border-left-color: #e0a82e;
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.dark#nprogress .spinner-icon {
+  border-top-color: #6419e6;
+  border-left-color: #6419e6;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
