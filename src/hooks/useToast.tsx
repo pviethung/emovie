@@ -18,16 +18,11 @@ export const useToast = () => {
   );
   const errorToast = useCallback(
     (msg: React.ReactNode) =>
-      toast(
-        (t) => (
-          <Toast type="error" onClose={() => toast.dismiss(t.id)}>
-            {msg}
-          </Toast>
-        ),
-        {
-          duration: Infinity,
-        }
-      ),
+      toast((t) => (
+        <Toast type="error" onClose={() => toast.dismiss(t.id)}>
+          {msg}
+        </Toast>
+      )),
     []
   );
   const alertToast = useCallback(
@@ -56,20 +51,6 @@ export const useToast = () => {
     return toast;
   }, []);
 
-  // const modalToast = useCallback(
-  //   (msg: React.ReactNode) =>
-  //     toast((t) => <>{msg}</>, {
-  //       // position: 'top-center',
-  //       // style: {
-  //       //   padding: 0,
-  //       //   margin: 0,
-  //       //   background: 'transparent',
-  //       //   boxShadow: 'none',
-  //       //   maxWidth: 'auto',
-  //       // },
-  //     }),
-  //   []
-  // );
   return {
     modalToast,
     alertToast,

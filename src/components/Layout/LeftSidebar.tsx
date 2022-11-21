@@ -65,6 +65,7 @@ const AccountButton = ({
   onToggle: () => void;
 }) => {
   const { user } = useAuthSelector();
+  const navigate = useNavigate();
   const { errorToast, successToast } = useToast();
   const [show, setShow] = useState(false);
   const dispatch = useAppDispatch();
@@ -80,9 +81,10 @@ const AccountButton = ({
   useEffect(() => {
     if (isSuccess) {
       dispatch(logoutAction());
+      navigate('/');
       successToast('You you have successfully logged out');
     }
-  }, [isSuccess, successToast, dispatch]);
+  }, [isSuccess, successToast, dispatch, navigate]);
 
   useEffect(() => {
     if (isError) errorToast('Something went wrong');
@@ -191,6 +193,7 @@ const AccountButton = ({
                   className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
                   onClick={() => {
                     // prompt('dasdas');
+                    //TODO delete
                     errorToast('3231');
                   }}
                 >
