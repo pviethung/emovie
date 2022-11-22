@@ -1,3 +1,4 @@
+import { ResourceNotFound } from '@/components/Elements';
 import { lazyImport } from '@/utils/lazyImport';
 import { Route, Routes } from 'react-router-dom';
 import { SuggestionList } from './SuggestionList';
@@ -19,7 +20,14 @@ export const WatchRoutes = () => {
           element={<SuggestionList type="recommendations" />}
         />
       </Route>
-      <Route path="*" element={<>402</>} />
+      <Route
+        path="*"
+        element={
+          <>
+            <ResourceNotFound />
+          </>
+        }
+      />
     </Routes>
   );
 };

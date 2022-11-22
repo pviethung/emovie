@@ -1,4 +1,5 @@
 import { SuspenseLoader, SwitchThemeButton } from '@/components/Elements';
+import { NotFound } from '@/components/Pages';
 import { lazyImport } from '@/utils/lazyImport';
 import clsx from 'clsx';
 import { Suspense } from 'react';
@@ -69,7 +70,14 @@ export const AuthRoutes = () => {
         <Route element={<LoginForm />} path="login" />
         <Route element={<RegisterForm />} path="register" />
       </Route>
-      <Route element={<>401</>} path="*" />
+      <Route
+        element={
+          <>
+            <NotFound />
+          </>
+        }
+        path="*"
+      />
     </Routes>
   );
 };

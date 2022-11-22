@@ -488,7 +488,6 @@ const AccountSettings = () => {
   );
 };
 
-// TODO 401 page
 const DeleteAccount = () => {
   const { successToast, errorToast, modalToast } = useToast();
   const dispatch = useAppDispatch();

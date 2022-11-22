@@ -1,3 +1,4 @@
+import { NotFound } from '@/components/Pages';
 import { ProtectedRoute } from '@/routes';
 import { lazyImport } from '@/utils/lazyImport';
 import { Route, Routes } from 'react-router-dom';
@@ -19,7 +20,14 @@ export const ListRoutes = () => {
         <Route path="recent" element={<PrivateList />} />
         <Route path="favorites" element={<PrivateList />} />
       </Route>
-      <Route path="*" element={<>401</>} />
+      <Route
+        path="*"
+        element={
+          <>
+            <NotFound />
+          </>
+        }
+      />
     </Routes>
   );
 };
