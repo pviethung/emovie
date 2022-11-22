@@ -12,7 +12,6 @@ export const updateAvatar = async (file: File) => {
     const res = await uploadBytes(avatarRef, file);
     return res;
   } catch (err) {
-    console.log(err);
     throw err;
   }
 };

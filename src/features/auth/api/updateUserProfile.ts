@@ -31,7 +31,6 @@ export const updateUserProfile = async ({
       email ? updateEmail(auth.currentUser, email) : undefined,
     ]);
   } catch (err) {
-    console.log(err);
     throw err;
   }
 };

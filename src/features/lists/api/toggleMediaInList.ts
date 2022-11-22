@@ -56,6 +56,6 @@ export const toggleMediaInList = async (
       return 'added';
     }
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };

@@ -7,7 +7,6 @@ export const deleteAccount = () => {
   try {
     return deleteUser(auth.currentUser);
   } catch (err) {
-    console.log(err);
     throw err;
   }
 };

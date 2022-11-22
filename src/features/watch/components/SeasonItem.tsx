@@ -30,7 +30,6 @@ export const SeasonItem = ({
   useLayoutEffect(() => {
     if (+currentSeason !== season.season_number || !firstLoad) return;
 
-    console.log('effect 1 run');
     setTimeout(() => {
       setShow(true);
     }, 250);
@@ -40,7 +39,6 @@ export const SeasonItem = ({
     if (!show || !firstLoad) return;
 
     onFirstLoadEnd();
-    console.log('effect run');
 
     const scrollableParent = document.querySelector('.seasons-wrap');
     const episodeElement = document.querySelector(

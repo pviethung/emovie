@@ -49,7 +49,6 @@ export const ReauthenticationForm = ({
       return reAuthenticate(password);
     },
   });
-  console.log('render sm form');
 
   const onSubmit: SubmitHandler<Inputs> = async (values) => {
     mutate(values.password);

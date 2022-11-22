@@ -49,8 +49,6 @@ export const SearchBar = ({
   });
   const [keywords, setKeywords] = useState(results);
 
-  console.log('render');
-
   useEffect(() => {
     // handle events
     const escapeHandler = (e: KeyboardEvent) => {

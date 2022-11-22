@@ -367,7 +367,6 @@ const Form = ({ user }: { user: User }) => {
               <ReauthenticationForm
                 toastId={t.id}
                 onError={() => {
-                  console.log('error!!');
                   errorToast('Invalid password');
                 }}
                 onSuccess={() => {
@@ -465,7 +464,6 @@ const AccountSettings = () => {
                 <ReauthenticationForm
                   toastId={t.id}
                   onError={() => {
-                    console.log('error!!');
                     errorToast('Invalid password');
                   }}
                   onSuccess={() => {
@@ -490,6 +488,7 @@ const AccountSettings = () => {
   );
 };
 
+// TODO 401 page
 const DeleteAccount = () => {
   const { successToast, errorToast, modalToast } = useToast();
   const dispatch = useAppDispatch();

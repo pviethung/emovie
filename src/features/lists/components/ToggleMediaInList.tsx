@@ -1,4 +1,5 @@
 import { useAuthSelector } from '@/features/auth';
+import { useToast } from '@/hooks/useToast';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import clsx from 'clsx';
 import { toggleMediaInList } from '../api/toggleMediaInList';
@@ -19,6 +20,7 @@ export const ToggleMediaInList = ({
 }) => {
   const queryClient = useQueryClient();
   const { user } = useAuthSelector();
+  const { errorToast } = useToast();
   const { mutate: addToBookmark, isLoading } = useMutation(
     [
       listTitle,
@@ -43,6 +45,10 @@ export const ToggleMediaInList = ({
   );
   const handleToggle = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (!user) {
+      errorToast('Please Login first');
+      return;
+    }
     addToBookmark();
   };
 

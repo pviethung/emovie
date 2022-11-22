@@ -308,6 +308,7 @@ export const InformationSection = ({
       <div className="divider divider-horizontal mx-0 w-0" />
 
       <div className={clsx('flex-1 pl-4')}>
+        {/* TODO move to detail */}
         {watch ? (
           <MediaSuggestion mediaDetail={mediaDetail} />
         ) : (

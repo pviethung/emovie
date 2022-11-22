@@ -18,7 +18,6 @@ export const MediaDetail = () => {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    console.log('effect run');
     if (!user) return;
 
     toggleMediaInList(user.uid, +mediaId, 'recent', mediaType, true).then(

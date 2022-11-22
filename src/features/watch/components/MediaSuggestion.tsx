@@ -11,7 +11,6 @@ const getMovieCards = <T extends MovieDetail | TvDetail>(movieDetail: T) => {
   let similar: React.ReactNode = '';
 
   movieDetail.recommendations.results.some((m) => {
-    console.log(m.id);
     if (!m.backdrop_path || !m.poster_path) return false;
     _5rcm.push(m);
     if (_5rcm.length === 5) return true;
@@ -19,7 +18,6 @@ const getMovieCards = <T extends MovieDetail | TvDetail>(movieDetail: T) => {
   });
 
   movieDetail.similar.results.some((m) => {
-    console.log(m.id);
     if (!m.backdrop_path || !m.poster_path) return false;
     _5sml.push(m);
     if (_5sml.length === 5) return true;
@@ -47,8 +45,6 @@ export const MediaSuggestion = ({
 }) => {
   let recommendations: React.ReactNode = '';
   let similar: React.ReactNode = '';
-
-  console.log(mediaDetail);
 
   if (isMovieDetail(mediaDetail)) {
     [recommendations, similar] = getMovieCards<MovieDetail>(mediaDetail);

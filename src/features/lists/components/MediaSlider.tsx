@@ -24,9 +24,6 @@ export const MediaSlider = <T extends keyof typeof mediaLists>({
   const list = mediaLists[resProps.listType][resProps.listKey];
   const listTitle = list['title' as keyof typeof list] as string;
 
-  if (data) {
-    console.log(data.results);
-  }
   SwiperCore.use([Autoplay]);
 
   return (

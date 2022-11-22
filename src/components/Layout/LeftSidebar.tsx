@@ -84,11 +84,15 @@ const AccountButton = ({
       navigate('/');
       successToast('You you have successfully logged out');
     }
-  }, [isSuccess, successToast, dispatch, navigate]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess]);
 
   useEffect(() => {
     if (isError) errorToast('Something went wrong');
-  }, [isError, errorToast]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isError]);
 
   return (
     <div
