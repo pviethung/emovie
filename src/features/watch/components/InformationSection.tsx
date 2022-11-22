@@ -309,9 +309,8 @@ export const InformationSection = ({
 
       <div className={clsx('flex-1 pl-4')}>
         {/* TODO move to detail */}
-        {watch ? (
-          <MediaSuggestion mediaDetail={mediaDetail} />
-        ) : (
+
+        {!watch && (
           <>
             <div className={clsx('relative')}>
               <LazyLoad className="z-10">
@@ -432,8 +431,11 @@ export const InformationSection = ({
                 </div>
               ) : null}
             </div>
+            <div className="divider"></div>
           </>
         )}
+
+        <MediaSuggestion mediaDetail={mediaDetail} />
       </div>
     </div>
   );
