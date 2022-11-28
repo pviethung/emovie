@@ -11,12 +11,12 @@ import { AppRoutes } from './routes';
 import { persistor, store } from './store';
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: Infinity,
-      retry: false,
-    },
-  },
+  // defaultOptions: {
+  //   queries: {
+  //     staleTime: Infinity,
+  //     retry: false,
+  //   },
+  // },
 });
 
 // a small change
