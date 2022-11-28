@@ -18,6 +18,8 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+// a small change
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
